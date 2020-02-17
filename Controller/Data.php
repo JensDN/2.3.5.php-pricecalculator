@@ -1,6 +1,15 @@
 <?php
-function getJsonData (string $filePath){
-// Check the existence of file
+
+
+class Data
+{
+    private $data = null;
+    public function __construct(string $filePath){
+        $this->data = $this->getJsonData($filePath);
+    }
+
+    private function getJsonData (string $filePath) :array {
+    // Check the existence of file
     if (file_exists($filePath)) {
         // Open the file for reading
         $handle = fopen($filePath, "r") or die("ERROR: Cannot open the" . $filePath);
@@ -12,4 +21,7 @@ function getJsonData (string $filePath){
     } else {
         die( "ERROR:" . $filePath . "does not exist.");
     }
+    }
+
+
 }

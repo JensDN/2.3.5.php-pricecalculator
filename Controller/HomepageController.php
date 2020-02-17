@@ -1,8 +1,24 @@
 <?php
 declare(strict_types = 1);
+require './Data.php';
 
 class HomepageController
 {
+
+    private  $Products =[];
+    private  $Customers =[];
+
+    public function __construct()
+    {
+        $this-> Products = new Data('../Data/products.json');
+        $this-> Customers = new Data('../Data/customers.json');
+    }
+    public function getProductsList () :array  {
+        return $this->Products;
+    }
+    public function getCustomersList () :array {
+        return $this->Customers;
+    }
     //render function with both $_GET and $_POST vars available if it would be needed.
     public function render(array $GET, array $POST)
     {
