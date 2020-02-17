@@ -1,6 +1,6 @@
 <?php
 declare(strict_types = 1);
-require './Data.php';
+require './Controller/Data.php';
 
 class HomepageController
 {
@@ -10,8 +10,8 @@ class HomepageController
 
     public function __construct()
     {
-        $this-> Products = new Data('../Data/products.json');
-        $this-> Customers = new Data('../Data/customers.json');
+        $this-> Products = new Data('./Data/products.json');
+        $this-> Customers = new Data('./Data/customers.json');
     }
     public function getProductsList () :array  {
         return $this->Products;
