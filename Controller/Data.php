@@ -3,11 +3,13 @@
 
 class Data
 {
-    private $data = null;
+    private ?array $data = null;
     public function __construct(string $filePath){
-        $this->data = $this->getJsonData($filePath);
+         $this->data = $this->getJsonData($filePath);
     }
-
+    public function getData(){
+        return $this->data;
+    }
     private function getJsonData (string $filePath) :array {
     // Check the existence of file
     if (file_exists($filePath)) {
