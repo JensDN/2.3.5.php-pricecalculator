@@ -11,7 +11,7 @@ class Data
     {
         return $this->data;
     }
-    private function getJsonData ( $filePath)  {
+    private function getJsonData ( $filePath)   {
     // Check the existence of file
     if (file_exists($filePath)) {
         // Open the file for reading
@@ -20,7 +20,7 @@ class Data
         $content = fread($handle, filesize($filePath));
         // Closing the file handle
         fclose($handle);
-        return json_decode($content);
+        return  json_decode($content);
     } else {
         die( 'ERROR:' . $filePath . 'does not exist.');
     }

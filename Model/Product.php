@@ -1,9 +1,9 @@
 <?php
-declare(strict_types=1);
 
-class User
+
+class Product
 {
-    private  $name;
+    private string $name;
 
     public function __construct(string $name)
     {
@@ -14,4 +14,6 @@ class User
     {
         return $this->name;
     }
+
+
 }

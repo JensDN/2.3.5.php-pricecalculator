@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -12,6 +11,7 @@
     <?php require 'includes/header.php'?>
     <section>
         <h4>Hello</h4>
+        <?php echo $products->getName(); ?>
         <p>Put your content here.</p>
     </section>
     <?php require 'includes/footer.php'?>
