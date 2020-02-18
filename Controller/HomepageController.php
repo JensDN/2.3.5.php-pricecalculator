@@ -5,8 +5,9 @@ declare(strict_types = 1);
 class HomepageController
 {
 
-    private  $Products =[];
-    private  $Customers =[];
+
+    private Data $Products;
+    private Data $Customers;
 
     public function __construct(string $productPath, string $costumersPath)
     {
@@ -18,6 +19,10 @@ class HomepageController
     }
     public function getCustomersList () :array {
         return $this->Customers->getData();
+    }
+    public function getCustomer($index) {
+        $arr = $this->getCustomersList();
+        return $arr[$index];
     }
     public function getCustomerData(string $getInputName){
         $item = null;
@@ -33,11 +38,10 @@ class HomepageController
     public function render()
     {
         //this is just example code, you can remove the line below
-       $user = new User('John Smith');
+        $user = new User('John Smith');
         $products = new  Product('wc borstel');
         //you should not echo anything inside your controller - only assign vars here
         // then the view will actually display them.
-
        //load the view
         require 'View/homepage.php';
 
