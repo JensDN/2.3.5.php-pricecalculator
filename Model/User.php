@@ -1,9 +1,9 @@
 <?php
-declare(strict_types=1);
+/*declare(strict_types=1);
 
 class User
 {
-    private string $name;
+    private  $name;
 
     public function __construct(string $name)
     {
@@ -14,4 +14,4 @@ class User
     {
         return $this->name;
     }
-}
+}*/
