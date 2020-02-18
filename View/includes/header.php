@@ -1,7 +1,5 @@
 <?php
-require '../../Controller/HomepageController.php';
-require '../../Controller/Data.php';
-$data = new HomepageController('../../Data/products.json','../../Data/customers.json');
+$data = new HomepageController('Data/products.json','Data/customers.json');
 ?>
 <header>
     <h1>Welcome to my site</h1>
