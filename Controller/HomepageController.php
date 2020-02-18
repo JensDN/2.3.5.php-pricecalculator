@@ -6,8 +6,8 @@ class HomepageController
 {
 
 
-    private Data $Products;
-    private Data $Customers;
+    private $Products;
+    private $Customers;
 
     public function __construct(string $productPath, string $costumersPath)
     {

@@ -3,7 +3,7 @@
 
 class Product
 {
-    private string $name;
+    private $name;
 
     public function __construct(string $name)
     {
