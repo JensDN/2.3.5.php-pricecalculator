@@ -3,15 +3,15 @@
 
 class Data
 {
-    private array $data;
+    private $data;
     public function __construct(string $filePath){
          $this->data = $this->getJsonData($filePath);
     }
-    public function getData(): array
+    public function getData()
     {
         return $this->data;
     }
-    private function getJsonData (string $filePath) :array {
+    private function getJsonData ( $filePath)  {
     // Check the existence of file
     if (file_exists($filePath)) {
         // Open the file for reading

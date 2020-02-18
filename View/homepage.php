@@ -1,7 +1,3 @@
-<?php
-require "./Model/User.php";
-$user = new User();
-?>
 
 <!doctype html>
 <html lang="en">
