@@ -21,4 +21,9 @@ require 'Model/JSON.php';
 //this file should never be more than 20 lines of code!
 
 $controller = new HomepageController;
+if (isset($_POST['product']) || isset($_POST['customer'])){
+    $controller->getObjectPost();
+    var_dump($controller->currentProduct);
+    var_dump($controller->currentCustomer);
+}
 $controller->render();
