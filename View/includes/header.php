@@ -3,14 +3,13 @@
 <header>
 	<form method="post">
 		<select id="products" name="products">
-            <?php foreach ($this->getProductsList () as $product){
-                echo '<option value='.$product['id'].'>'.$product['name'].'</option>';
+            <?php foreach($productList as $product){
+                echo '<option value='.$product->getId().'>'.$product->getName().'</option>';
             }?>
 		</select>
-
-		<label for="costumers"></label><select id="costumers" name="costumers">
-            <?php foreach ($this->getCustomersList() as $customer){
-                echo '<option   value='.$customer['id'].'>'.$customer['name'].'</option>';
+        <select id="costumers" name="costumers">
+            <?php foreach($customerList as $customer){
+                echo '<option   value='.$customer->getId().'>'.$customer->getName().'</option>';
             }?>
 		</select>
 		<button type="submit" >Submit</button>
