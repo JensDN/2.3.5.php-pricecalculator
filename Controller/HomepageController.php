@@ -4,8 +4,6 @@ declare(strict_types = 1);
 
 class HomepageController
 {
-
-
     private $Products;
     private $Customers;
 
@@ -34,6 +32,10 @@ class HomepageController
         }
         return $item;
     }
+    public function loaderFunction(){
+        $arr = [];
+
+    }
     //render function with both $_GET and $_POST vars available if it would be needed.
     public function render()
     {
@@ -47,4 +49,6 @@ class HomepageController
         require 'View/homepage.php';
 
     }
+
+
 }
