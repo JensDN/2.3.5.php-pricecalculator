@@ -6,6 +6,8 @@ class HomepageController
 {
     private $Products;
     private $Customers;
+    public $currentProduct;
+    public $currentCustomer;
 
     public function __construct()
     {
@@ -14,7 +16,13 @@ class HomepageController
         $this->Customers = $decodeJson->makeCostumersClass();
     }
 
+    public function getObjectPost (){
+            $productID = (int)$_POST['product'];
+            $customerID = (int)$_POST['customer'];
+            $this->currentProduct = $this->Products[$productID];
+            $this->currentCustomer = $this->Customers[$customerID];
 
+    }
 
     //render function with both $_GET and $_POST vars available if it would be needed.
     public function render()
