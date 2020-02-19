@@ -4,6 +4,8 @@
 class Product
 {
     private $name;
+    private $price;
+
 
     public function __construct(string $name)
     {
@@ -14,6 +16,9 @@ class Product
     {
         return $this->name;
     }
-
+    public function getPrice() : string
+    {
+        return $this->price;
+    }
 
 }

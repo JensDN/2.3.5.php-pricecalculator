@@ -39,6 +39,7 @@ class HomepageController
     //render function with both $_GET and $_POST vars available if it would be needed.
     public function render()
     {
+
         //this is just example code, you can remove the line below
         $user = new Customer('John Smith');
         $products = new  Product('wc borstel');

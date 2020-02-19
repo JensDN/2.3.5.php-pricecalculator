@@ -3,13 +3,38 @@ declare(strict_types=1);
 
 class Customer
 {
- private $id;
- private $name;
- private $groupID;
- public function __construct($id,$name,$groupID)
- {
-     $this->id = $id;
-     $this->name = $name;
-     $this->groupID= $groupID;
- }
+    private $name;
+    private $id;
+    private $groupId;
+
+
+
+    public function __construct(string $name, int $id, int $groupId)
+    {
+        $this->name = $name;
+        $this->id = $id;
+        $this->groupId = $groupId;
+    }
+
+    public function getName() : string
+    {
+        return $this->name;
+    }
+
+    /**
+     * @return int
+     */
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param int $groupId
+     */
+    public function setGroupId(int $groupId): void
+    {
+        $this->groupId = $groupId;
+    }
+
 }
