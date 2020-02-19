@@ -38,9 +38,4 @@ class Customer
         $this->groupId = $groupId;
     }
 
-    public function getGroup($object)
-    {
-        array_push($this->group, $object);
-    }
-
 }

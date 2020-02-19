@@ -10,6 +10,7 @@ require 'Controller/HomepageController.php';
 require 'Model/Customer.php';
 require 'Model/Product.php';
 require 'Model/JSON.php';
+require 'Model/Group.php';
 
 
 //include all your model files here

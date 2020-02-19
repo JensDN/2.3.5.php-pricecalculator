@@ -12,7 +12,7 @@ class Group
     /**
      * @return mixed
      */
-    public function __construct(int $id, string $name, int $groupId, int $varDiscount, int, $fixDiscount)
+    public function __construct($id, $name, $groupId, $varDiscount, $fixDiscount)
     {
         $this->id = $id;
         $this->name = $name;

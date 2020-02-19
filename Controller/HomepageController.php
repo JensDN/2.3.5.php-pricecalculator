@@ -31,8 +31,10 @@ class HomepageController
     {
         $productList = $this->Products;
         $customerList = $this->Customers;
+        var_dump($this->Groups);
         require 'View/homepage.php';
     }
+
 
 
 }
