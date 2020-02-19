@@ -6,6 +6,7 @@ class Product
     private $name;
     private $price;
 
+
     public function __construct(string $name)
     {
         $this->name = $name;
@@ -19,6 +20,5 @@ class Product
     {
         return $this->price;
     }
-
 
 }
