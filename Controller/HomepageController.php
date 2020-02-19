@@ -6,6 +6,7 @@ class HomepageController
 {
     private $Products;
     private $Customers;
+    private $Groups;
     public $currentProduct;
     public $currentCustomer;
 
@@ -14,6 +15,7 @@ class HomepageController
         $decodeJson = new JSON;
         $this->Products = $decodeJson->makeProductClass();
         $this->Customers = $decodeJson->makeCostumersClass();
+        $this->Groups = $decodeJson->makeGroupsClass();
     }
 
     public function getObjectPost (){

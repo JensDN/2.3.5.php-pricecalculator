@@ -6,7 +6,7 @@ class Customer
     private $name;
     private $id;
     private $groupId;
-
+    private $group = [];
 
 
     public function __construct( $name, $id, $groupId)
@@ -16,6 +16,7 @@ class Customer
         $this->groupId = $groupId;
     }
 
+    //GETTERS
     public function getName() : string
     {
         return $this->name;
@@ -35,6 +36,11 @@ class Customer
     public function setGroupId(int $groupId): void
     {
         $this->groupId = $groupId;
+    }
+
+    public function getGroup($object)
+    {
+        array_push($this->group, $object);
     }
 
 }
