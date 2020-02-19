@@ -17,13 +17,36 @@ class Product
         $this->description = $description;
     }
 
-    public function getName() : string
+    /**
+     * @return string
+     */
+    public function getName(): string
     {
         return $this->name;
     }
-    public function getPrice() : string
+
+    /**
+     * @return int
+     */
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
+    /**
+     * @return float
+     */
+    public function getPrice(): float
     {
         return $this->price;
+    }
+
+    /**
+     * @param string $description
+     */
+    public function setDescription(string $description): void
+    {
+        $this->description = $description;
     }
 
 }
