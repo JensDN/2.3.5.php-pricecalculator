@@ -9,8 +9,8 @@
 		</select>
 
 		<label for="costumers"></label><select id="costumers" name="costumers">
-            <?php foreach ($this->getCustomersList() as $costumer){
-                echo '<option   value='.$costumer['id'].'>'.$costumer['name'].'</option>';
+            <?php foreach ($this->getCustomersList() as $customer){
+                echo '<option   value='.$customer['id'].'>'.$customer['name'].'</option>';
             }?>
 		</select>
 		<button type="submit" >Submit</button>
