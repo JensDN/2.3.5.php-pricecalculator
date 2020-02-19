@@ -20,10 +20,9 @@ class Data
         $content = fread($handle, filesize($filePath));
         // Closing the file handle
         fclose($handle);
-        return  json_decode($content, true);
-    } else {
-        die( 'ERROR:' . $filePath . 'does not exist.');
+        return json_decode($content, true, 512, JSON_THROW_ON_ERROR);
     }
+    die( 'ERROR:' . $filePath . 'does not exist.');
     }
 
 
