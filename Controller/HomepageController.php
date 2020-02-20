@@ -7,8 +7,9 @@ class HomepageController
     private $Products;
     private $Customers;
     private $Groups;
-    public $currentProduct;
-    public $currentCustomer;
+    private $currentProduct;
+    private $currentCustomer;
+    public $currentGroup;
 
     public function __construct()
     {
@@ -26,9 +27,14 @@ class HomepageController
 
     }
 
+    public function getGroupsfromCustomer (){
+        $groupIdCustomer = (int)$this->currentCustomer->getGroupId();
+        $this->currentGroup[] = $this->Groups[$groupIdCustomer];
+    }
     //render function with both $_GET and $_POST vars available if it would be needed.
     public function render()
     {
+
         $productList = $this->Products;
         $customerList = $this->Customers;
         $groupList = $this->Groups;

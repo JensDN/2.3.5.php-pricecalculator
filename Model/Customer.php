@@ -9,7 +9,7 @@ class Customer
     private $group = [];
 
 
-    public function __construct( $name, $id, $groupId)
+    public function __construct($name, $id, $groupId)
     {
         $this->name = $name;
         $this->id = $id;
@@ -17,7 +17,7 @@ class Customer
     }
 
     //GETTERS
-    public function getName() : string
+    public function getName(): string
     {
         return $this->name;
     }
@@ -29,13 +29,8 @@ class Customer
     {
         return $this->id;
     }
-
-    /**
-     * @param int $groupId
-     */
-    public function setGroupId(int $groupId): void
+    public function getGroupId()
     {
-        $this->groupId = $groupId;
+        return $this->groupId;
     }
-
 }

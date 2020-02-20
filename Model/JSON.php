@@ -35,23 +35,24 @@ class JSON
         foreach ($this->groupsData as $group) {
             if (isset($group['group_id'])) {
                 if (!isset($group['variable_discount'])) {
-                    array_push($this->groupsList, new Group($group['name'], $group['id'], $group['group_id'], null, $group['fixed_discount']));
+                    array_push($this->groupsList, new Group($group['id'],$group['name'], $group['group_id'], null, $group['fixed_discount']));
                 } elseif (!isset($group['fixed_discount'])) {
-                    array_push($this->groupsList, new Group($group['name'], $group['id'], $group['group_id'], $group['variable_discount'], null));
+                    array_push($this->groupsList, new Group($group['id'],$group['name'], $group['group_id'], $group['variable_discount'], null));
                 } else {
-                    array_push($this->groupsList, new Group($group['name'], $group['id'], $group['group_id'], $group['variable_discount'], $group['fixed_discount']));
+                    array_push($this->groupsList, new Group($group['id'],$group['name'], $group['group_id'], $group['variable_discount'], $group['fixed_discount']));
                 }
             }
             else {
                 if (!isset($group['variable_discount'])) {
-                    array_push($this->groupsList, new Group($group['name'], $group['id'], null, null, $group['fixed_discount']));
+                    array_push($this->groupsList, new Group($group['id'],$group['name'], null, null, $group['fixed_discount']));
                 } elseif (!isset($group['fixed_discount'])) {
-                    array_push($this->groupsList, new Group($group['name'], $group['id'], null, $group['variable_discount'], null));
+                    array_push($this->groupsList, new Group($group['id'],$group['name'], null, $group['variable_discount'], null));
                 } else {
-                    array_push($this->groupsList, new Group($group['name'], $group['id'], null, $group['variable_discount'], $group['fixed_discount']));
+                    array_push($this->groupsList, new Group($group['id'],$group['name'], null, $group['variable_discount'], $group['fixed_discount']));
                 }
             }
         }
         return $this->groupsList;
     }
+
 }

@@ -24,7 +24,8 @@ require 'Model/Group.php';
 $controller = new HomepageController;
 if (isset($_POST['product']) || isset($_POST['customer'])){
     $controller->getObjectPost();
-    var_dump($controller->currentProduct);
-    var_dump($controller->currentCustomer);
+    $controller->getGroupsfromCustomer();
+    var_dump($controller->currentGroup);
+
 }
 $controller->render();
