@@ -25,10 +25,14 @@ $controller = new HomepageController;
 if (isset($_POST['product']) || isset($_POST['customer'])){
     $controller->getObjectPost();
     $controller->getGroupFromCustomer();
+    var_dump($controller->getProduct());
     var_dump($controller->currentGroup);
     $controller->getGroupsFromCustomer();
     echo 'customergroups';
     var_dump($controller->currentGroup);
+    echo 'customer price array';
+    $controller->priceArray();
+    var_dump($controller->priceArray());
 
 }
 $controller->render();

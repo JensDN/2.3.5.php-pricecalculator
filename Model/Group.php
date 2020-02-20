@@ -6,8 +6,8 @@ class Group
     private $id;
     private $name;
     private $groupId;
-    private $varDiscount;
-    private $fixDiscount;
+   public $varDiscount;
+    public $fixDiscount;
 
     /**
      * @return mixed
@@ -32,6 +32,7 @@ class Group
     {
         return (int)$this->groupId;
     }
+
 
 
 

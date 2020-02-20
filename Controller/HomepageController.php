@@ -10,7 +10,17 @@ class HomepageController
     private $currentProduct;
     private $currentCustomer;
     public $currentGroup;
-
+    public function getProduct(){
+        return $this->currentProduct;
+    }
+    public function  getCustomer() {
+        return $this->currentCustomer;
+    }
+    public function priceArray (){
+        $this->currentCustomer->setPriceGroup($this->currentGroup);
+        $this->currentCustomer->setProduct($this->currentProduct);
+        return $this->currentCustomer->getProductPrice();
+    }
     public function __construct()
     {
         $decodeJson = new JSON;
@@ -50,7 +60,7 @@ class HomepageController
             }
         }
     }
-
+    
     //render function with both $_GET and $_POST vars available if it would be needed.
     public function render()
     {
@@ -60,7 +70,4 @@ class HomepageController
         $groupList = $this->Groups;
         require 'View/homepage.php';
     }
-
-
-
 }
