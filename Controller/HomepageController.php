@@ -27,10 +27,30 @@ class HomepageController
 
     }
 
-    public function getGroupsfromCustomer (){
-        $groupIdCustomer = (int)$this->currentCustomer->getGroupId();
-        $this->currentGroup[] = $this->Groups[$groupIdCustomer];
+    public function getGroupFromCustomer (){
+        foreach ($this->Groups as $group){
+           if($group->getId() === $this->currentCustomer->getGroupId()){
+               return $this-> currentGroup[] = $group;
+               }
+        }
     }
+    public function getGroupsFromCustomer (){
+        $groupID = $this->currentGroup[0]->getGroupId();
+        while($groupID != null){
+            foreach ($this->Groups as $group){
+                if ($group->getId() === $groupID){
+                    $this->currentGroup[] = $group;
+                    if ($group->getGroupId() === $groupID){
+                        $groupID = null;
+                        break;
+                    } else {
+                        $groupID = $group->getGroupId();
+                    }
+                }
+            }
+        }
+    }
+
     //render function with both $_GET and $_POST vars available if it would be needed.
     public function render()
     {

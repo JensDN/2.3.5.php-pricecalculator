@@ -14,9 +14,9 @@ class Group
      */
     public function __construct($id, $name, $groupId, $varDiscount, $fixDiscount)
     {
-        $this->id = $id;
+        $this->id = (int)$id;
         $this->name = $name;
-        $this->groupId = $groupId;
+        $this->groupId = (int)$groupId;
         $this->varDiscount = $varDiscount;
         $this->fixDiscount = $fixDiscount;
     }
@@ -26,9 +26,12 @@ class Group
      */
     public function getId(): int
     {
-        return $this->id;
+        return (int)$this->id;
     }
-
+    public function getGroupId():int
+    {
+        return (int)$this->groupId;
+    }
 
 
 

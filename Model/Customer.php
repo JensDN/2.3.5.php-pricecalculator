@@ -12,8 +12,8 @@ class Customer
     public function __construct($name, $id, $groupId)
     {
         $this->name = $name;
-        $this->id = $id;
-        $this->groupId = $groupId;
+        $this->id = (int)$id;
+        $this->groupId = (int)$groupId;
     }
 
     //GETTERS
@@ -29,8 +29,8 @@ class Customer
     {
         return $this->id;
     }
-    public function getGroupId()
+    public function getGroupId() :int
     {
-        return $this->groupId;
+        return (int)$this->groupId;
     }
 }
