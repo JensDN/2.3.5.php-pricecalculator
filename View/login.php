@@ -1,6 +1,13 @@
 <?php
 declare(strict_types = 1);
+ini_set('display_errors', '1');
+ini_set('display_startup_errors', '1');
+error_reporting(E_ALL);
 
+require "../Controller/LoginController.php";
+
+$name = new LoginController();
+$password = new LoginController();
 
 ?>
 
@@ -15,8 +22,10 @@ declare(strict_types = 1);
     <h1>Login to select customer and product</h1>
 </header>
 <form method="post">
-    <input type="text" placeholder="Name + Surname">
-    <input type="text" placeholder="Password">
+    <input type="text" name="name" placeholder="Name + Surname">
+	<?php echo $name->Err();?>
+    <input type="text" name="password" placeholder="Password">
+	<?php echo $password->Err()?>
     <button type="submit" name="button">Log in</button>
 </form>
 
