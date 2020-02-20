@@ -9,7 +9,7 @@ class Product
     private $description;
 
 
-    public function __construct( $name,  $id,  $price,  $description)
+    public function __construct($name, $id, $price, $description)
     {
         $this->name = $name;
         $this->id = $id;
