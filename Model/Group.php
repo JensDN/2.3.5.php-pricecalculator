@@ -17,20 +17,29 @@ class Group
         $this->id = (int)$id;
         $this->name = $name;
         $this->groupId = (int)$groupId;
-        $this->varDiscount = $varDiscount;
-        $this->fixDiscount = $fixDiscount;
+        $this->varDiscount = (int)$varDiscount;
+        $this->fixDiscount = (int)$fixDiscount;
     }
 
-    /**
-     * @return int
-     */
+
     public function getId(): int
     {
         return (int)$this->id;
     }
+
     public function getGroupId():int
     {
         return (int)$this->groupId;
+    }
+
+    public function getVarDiscount()
+    {
+        return $this->varDiscount;
+    }
+
+    public function getFixDiscount()
+    {
+        return $this->fixDiscount;
     }
 
 

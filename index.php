@@ -22,6 +22,8 @@ require 'Model/Group.php';
 //this file should never be more than 20 lines of code!
 
 $controller = new HomepageController;
+
+$controller->render();
 if (isset($_POST['product']) || isset($_POST['customer'])){
     $controller->getObjectPost();
     $controller->getGroupFromCustomer();
@@ -29,6 +31,6 @@ if (isset($_POST['product']) || isset($_POST['customer'])){
     $controller->getGroupsFromCustomer();
     echo 'customergroups';
     var_dump($controller->currentGroup);
+    $controller->renderTable();
 
 }
-$controller->render();

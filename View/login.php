@@ -23,9 +23,9 @@ $password = new LoginController();
 </header>
 <form method="post">
     <input type="text" name="name" placeholder="Name + Surname">
-	<?php echo $name->Err();?>
+	<?php echo $name->nameErr();?>
     <input type="text" name="password" placeholder="Password">
-	<?php echo $password->Err()?>
+	<?php echo $password->passErr()?>
     <button type="submit" name="button">Log in</button>
 </form>
 

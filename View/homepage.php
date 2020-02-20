@@ -14,9 +14,9 @@
         <h4>Hello</h4>
 
         <p>Put your content here.</p>
+
     </section>
     <?php require 'includes/footer.php'?>
-
 
 </body>
 </html>

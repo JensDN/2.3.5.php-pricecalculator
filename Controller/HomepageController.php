@@ -19,7 +19,7 @@ class HomepageController
         $this->Groups = $decodeJson->makeGroupsClass();
     }
 
-    public function getObjectPost (){
+    public function getObjectPost() {
             $productID = (int)$_POST['product'];
             $customerID = (int)$_POST['customer'];
             $this->currentProduct = $this->Products[$productID];
@@ -27,20 +27,20 @@ class HomepageController
 
     }
 
-    public function getGroupFromCustomer (){
-        foreach ($this->Groups as $group){
-           if($group->getId() === $this->currentCustomer->getGroupId()){
+    public function getGroupFromCustomer() {
+        foreach ($this->Groups as $group) {
+           if($group->getId() === $this->currentCustomer->getGroupId()) {
                return $this-> currentGroup[] = $group;
                }
         }
     }
-    public function getGroupsFromCustomer (){
+    public function getGroupsFromCustomer() {
         $groupID = $this->currentGroup[0]->getGroupId();
         while($groupID != null){
-            foreach ($this->Groups as $group){
-                if ($group->getId() === $groupID){
+            foreach ($this->Groups as $group) {
+                if ($group->getId() === $groupID) {
                     $this->currentGroup[] = $group;
-                    if ($group->getGroupId() === $groupID){
+                    if ($group->getGroupId() === $groupID) {
                         $groupID = null;
                         break;
                     } else {
@@ -61,6 +61,31 @@ class HomepageController
         require 'View/homepage.php';
     }
 
+    public function getTotalPrice()
+    {
+        $totalPrice = $this->currentProduct->getPrice();
 
+        if ($this->currentGroup[0]->getVarDiscount() == null) {
+            $totalPrice = $this->currentProduct->getPrice() - $this->currentGroup[0]->getFixDiscount();
+        }
+        elseif ($this->currentGroup[0]->getFixDiscount() == null) {
+            $totalPrice = $this->currentProduct->getPrice() - $this->currentGroup[0]->getVarDiscount();
+        }
+    }
+
+
+    //render necessary things to table in index
+    public function renderTable()
+    {
+        //$customerName = $this->currentCustomer->getName();
+        $productName = $this->currentProduct->getName();
+        $originalPrice = $this->currentProduct->getPrice();
+        $varDisc = $this->currentGroup[0]->getVarDiscount();
+        $fixDisc = $this->currentGroup[0]->getFixDiscount();
+        $totalPrice = $this->getTotalPrice();
+
+        require 'View/includes/table.php';
+
+    }
 
 }
